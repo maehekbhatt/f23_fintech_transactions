@@ -1,6 +1,6 @@
 # f23_fintech_transactions
 
-**FALL 2023 FINTECH - TRANSACTIONS SUBGROUP**
+**CONVERGENT FALL 2023 // TRANSACTIONS SUBGROUP**
 
 ****Members:****
 
