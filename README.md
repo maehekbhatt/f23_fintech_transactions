@@ -1,6 +1,5 @@
-# f23_fintech_transactions
 
-**CONVERGENT FALL 2023 // TRANSACTIONS SUBGROUP**
+# CONVERGENT FALL 2023 // TRANSACTIONS SUBGROUP
 
 ****Members:****
 
@@ -21,3 +20,6 @@ _Design:_
 
 - Jessica Zhu
 
+**Project Description:**
+
+_Problem Statement: _
