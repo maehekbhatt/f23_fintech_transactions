@@ -1,5 +1,5 @@
 
-# CONVERGENT FALL 2023 // TRANSACTIONS SUBGROUP
+# CONVERGENT FALL 2023 - TRANSACTIONS SUBGROUP
 
 ****Members:****
 
@@ -22,4 +22,4 @@ _Design:_
 
 **Project Description:**
 
-_Problem Statement: _
+_Problem Statement: UT students need a safe and secure way to go through with peer-to-peer transactions in a marketplace setting/aspect._
