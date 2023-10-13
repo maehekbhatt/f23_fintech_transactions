@@ -20,9 +20,9 @@ export default function App() {
             options={{ title: 'Home' }}
           />
           <Stack.Screen
-            name="NewPage"
+            name="Login"
             component={NewPageScreen}
-            options={{ title: 'New Page' }}
+            options={{ title: 'Login' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -32,7 +32,7 @@ export default function App() {
 const HomeScreen = ({ navigation }) => {
   const handleButtonPress = () => {
     // Navigate to the new page when the button is pressed
-    navigation.navigate('NewPage');
+    navigation.navigate('Login');
   };
 
   return (
