@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 
+export default function LoginScreen({ navigation }) {
+  const handleButtonPress = () => {
+    // Navigate to the new page when the button is pressed
+    navigation.navigate('Home');
+  };
 
-export default function NewPageScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>UT Safe Trade</Text>
@@ -12,7 +16,7 @@ export default function NewPageScreen() {
         keyboardType="email-address"
         autoCapitalize="none"
         textContentType="emailAddress"
-        spellCheck="false"
+        spellCheck={false}
         width={300}
       />
       <TextInput
@@ -22,7 +26,8 @@ export default function NewPageScreen() {
         width={300}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button, { right: 10 }]}>
+        <TouchableOpacity style={[styles.button, { right: 10 }]}
+          onPress={handleButtonPress}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, { left: 10 }]}>

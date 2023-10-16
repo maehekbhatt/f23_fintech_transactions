@@ -1,35 +1,41 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Import the NewPageScreen component from the newpage file
 import NewPageScreen from './Login';
+import LoginScreen from './Login';
+import HomeScreen from './Home';
 
 // Create a stack navigator
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{ title: 'Home' }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={NewPageScreen}
-            options={{ title: 'Login' }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="UT Safe Trade">
+        <Stack.Screen
+          name="UT Safe Trade"
+          component={UTSafeTrade}
+          options={{ title: 'UT Safe Trade', headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ title: 'Login', headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Home', headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const HomeScreen = ({ navigation }) => {
+const UTSafeTrade = ({ navigation }) => {
   const handleButtonPress = () => {
     // Navigate to the new page when the button is pressed
     navigation.navigate('Login');
@@ -42,7 +48,6 @@ const HomeScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
-      <StatusBar style="auto" />
     </View>
   );
 };
