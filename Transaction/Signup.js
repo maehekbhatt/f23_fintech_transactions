@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 
-export default function LoginScreen({ navigation }) {
+export default function SignupScreen({ navigation }) {
   const handleButtonPress = () => {
     // Navigate to the new page when the button is pressed
     navigation.navigate('Home');
@@ -10,7 +10,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>UT Safe Trade</Text>
-      <Text style={styles.description}>Log In</Text>
+      <Text style={styles.description}>Sign Up</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -29,7 +29,7 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.button]}
           onPress={handleButtonPress}>
-          <Text style={styles.buttonText}>Log In</Text>
+          <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
