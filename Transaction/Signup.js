@@ -1,11 +1,27 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import {db} from './Firebase';
 
 export default function SignupScreen({ navigation }) {
   const handleButtonPress = () => {
     // Navigate to the new page when the button is pressed
     navigation.navigate('Home');
-  };
+
+    db.collection("users").doc(username).set({
+      username: username,
+      password: password
+    })
+    .then(() => {
+      console.log("Document successfully written!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
+    navigation.navigate('Home');
+    };
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
   return (
     <View style={styles.container}>
@@ -19,12 +35,16 @@ export default function SignupScreen({ navigation }) {
         textContentType="emailAddress"
         spellCheck={false}
         width={300}
+        onChangeText={newText=>setUsername(newText)}
+        defaultValue={username}
       />
       <TextInput
         style={styles.input}
         placeholder="Password"
         secureTextEntry={true}
         width={300}
+        onChangeText={newText=>setPassword(newText)}
+        defaultValue={password}
       />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.button]}
@@ -35,6 +55,7 @@ export default function SignupScreen({ navigation }) {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
