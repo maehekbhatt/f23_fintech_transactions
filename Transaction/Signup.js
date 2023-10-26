@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import {db} from './Firebase';
 
 export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleButtonPress = () => {
-    if (email.trim() === '' || password.trim() === '') {
-      // Display an alert if either the email or password is blank
-      Alert.alert('Missing Information', 'Please enter both email and password.');
-    } else if (!validateEmail(email)) {
-      // Display an alert for invalid email
-      Alert.alert('Invalid Email', 'Please use a .edu email address.');
-    } else {
-      // Navigate to the new page when the input is valid
-      navigation.navigate('Home');
-    }
-  };
-
-  const validateEmail = (email) => {
-    const emailRegex = /.edu$/i; // Check if the email ends with ".edu"
-    return emailRegex.test(email);
+    // Navigate to the new page when the button is pressed
+    navigation.navigate('Home');
   };
 
   return (
@@ -35,16 +23,12 @@ export default function SignUpScreen({ navigation }) {
         textContentType="emailAddress"
         spellCheck={false}
         width={300}
-        value={email}
-        onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         style={styles.input}
         placeholder="Password"
         secureTextEntry={true}
         width={300}
-        value={password}
-        onChangeText={(text) => setPassword(text)}
       />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.button]} onPress={handleButtonPress}>
@@ -54,6 +38,7 @@ export default function SignUpScreen({ navigation }) {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
