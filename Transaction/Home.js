@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.title}>My App</Text>
       <View style={styles.mainContent}>
         {/* Add your app's main content here */}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
