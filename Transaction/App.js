@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from './Login';
 import HomeScreen from './Home';
 import SignupScreen from './Signup';
+import ImageAssets from './assets/ImageAssets'
 
 // Create a stack navigator
 const Stack = createStackNavigator();
@@ -51,14 +52,14 @@ const UTSafeTrade = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>UT Safe Trade</Text>
+      <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
       <Text style={styles.description}>Build 0.0</Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button, { right: 10 }]} onPress={navigateLogin}>
-          <Text style={styles.buttonText}>Log In</Text>
+        <TouchableOpacity style={[styles.logInButton, {bottom: 25 , left: 153}]} onPress={navigateLogin}>
+          <Text style={styles.logInButtonText}>Log In</Text>
         </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, { left: 10 }]} onPress={navigateSignUp}>
-          <Text style={styles.buttonText}>Sign Up</Text>
+              <TouchableOpacity style={[styles.signUpButton, {top:60, right: 145}]} onPress={navigateSignUp}>
+          <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -68,7 +69,7 @@ const UTSafeTrade = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#99b989',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -86,8 +87,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#355c7d',
     paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    width: 300,
     marginTop: 20,
   },
   buttonContainer: {
@@ -97,5 +97,38 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: '#fff',
+    textAlign: 'center'
+  },
+  icon: {
+    width: 400, 
+    height: 200,
+  },
+  signUpButton: {
+    borderWidth: 2,
+    borderColor: '#00bfff', 
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    width: 300,
+    borderRadius: 5,
+  },
+  signUpButtonText: {
+    color: '#00bfff', 
+    fontSize: 20,
+    textAlign: 'center',
+    top: 0,
+  },
+  logInButton: {
+    borderWidth: 2,
+    borderColor: '#ffffff', 
+    backgroundColor: '#00bfff',
+    paddingVertical: 10,
+    width: 300,
+    borderRadius: 5,
+  },
+  logInButtonText: {
+    color: '#ffffff', 
+    fontSize: 20,
+    textAlign: 'center',
+    top: 0,
   },
 });
