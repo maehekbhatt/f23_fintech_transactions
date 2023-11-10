@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   button: {
-    backgroundColor: '#00bfff',
+    backgroundColor: '#EBEBEB',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
@@ -100,6 +100,6 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontFamily: 'HelveticaNeue-Thin',
-    color: '#fff',
+    color: '#000',
   },
 });

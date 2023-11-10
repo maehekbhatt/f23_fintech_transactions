@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     borderWidth: 2,
-    borderColor: '#00bfff', 
+    borderColor: '#00bfff',
     backgroundColor: 'white',
     paddingVertical: 10,
     width: 300,
@@ -120,7 +120,6 @@ const styles = StyleSheet.create({
   },
   logInButton: {
     borderWidth: 2,
-    fontFamily: 'HelveticaNeue-Thin',
     borderColor: '#ffffff', 
     backgroundColor: '#00bfff',
     paddingVertical: 10,
@@ -129,6 +128,7 @@ const styles = StyleSheet.create({
   },
   logInButtonText: {
     color: '#ffffff', 
+    fontFamily: 'HelveticaNeue-Thin',
     fontSize: 20,
     textAlign: 'center',
     top: 0,
