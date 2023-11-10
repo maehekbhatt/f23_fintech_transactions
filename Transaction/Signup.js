@@ -30,6 +30,7 @@ export default function SignUpScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Sign up with your .edu email"
+        fontFamily="HelveticaNeue-Thin"
         keyboardType="email-address"
         autoCapitalize="none"
         textContentType="emailAddress"
@@ -41,6 +42,7 @@ export default function SignUpScreen({ navigation }) {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        fontFamily="HelveticaNeue-Thin"
         secureTextEntry={true}
         width={300}
         value={password}
@@ -58,19 +60,20 @@ export default function SignUpScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#99b989',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
     fontSize: 40,
-    fontWeight: 'bold',
-    color: '#fff',
+    fontFamily: 'HelveticaNeue-Thin',
+    color: '#000000',
     marginBottom: 20,
   },
   description: {
     fontSize: 14,
-    color: '#ecf0f1',
+    fontFamily: 'HelveticaNeue-Thin',
+    color: '#000000',
     marginBottom: 15,
   },
   input: {
@@ -81,13 +84,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     padding: 10,
+    borderWidth: .5,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   button: {
-    backgroundColor: '#355c7d',
+    backgroundColor: '#00bfff',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
@@ -95,6 +99,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
+    fontFamily: 'HelveticaNeue-Thin',
     color: '#fff',
   },
 });

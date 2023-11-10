@@ -113,12 +113,14 @@ const styles = StyleSheet.create({
   },
   signUpButtonText: {
     color: '#00bfff', 
+    fontFamily: 'HelveticaNeue-Thin',
     fontSize: 20,
     textAlign: 'center',
     top: 0,
   },
   logInButton: {
     borderWidth: 2,
+    fontFamily: 'HelveticaNeue-Thin',
     borderColor: '#ffffff', 
     backgroundColor: '#00bfff',
     paddingVertical: 10,
