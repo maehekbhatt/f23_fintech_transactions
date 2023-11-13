@@ -1,9 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, Image } from 'react-native';
+import {db, auth} from "./Firebase"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+
 
 export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up a
+    const user = userCredential.user;
+    console.log("I AM HERE")
+    navigation.navigate('Home')
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  
 
   const handleButtonPress = () => {
     if (email.trim() === '' || password.trim() === '') {
@@ -14,6 +32,8 @@ export default function SignUpScreen({ navigation }) {
       Alert.alert('Invalid Email', 'Please use a .edu email address.');
     } else {
       // Navigate to the new page when the input is valid
+      //createUserWithEmailAndPassword(auth, email, password);
+      //console.log("HEREHEREHEREHRER")
       navigation.navigate('Home');
     }
   };
@@ -25,7 +45,7 @@ export default function SignUpScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>UT Safe Trade</Text>
+      <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
       <Text style={styles.description}>Sign Up</Text>
       <TextInput
         style={styles.input}
@@ -49,8 +69,8 @@ export default function SignUpScreen({ navigation }) {
         onChangeText={(text) => setPassword(text)}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button]} onPress={handleButtonPress}>
-          <Text style={styles.buttonText}>Sign Up</Text>
+        <TouchableOpacity style={[styles.createButton]} onPress={handleButtonPress}>
+          <Text style={styles.createButtonText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -60,7 +80,7 @@ export default function SignUpScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -77,7 +97,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
+    borderWidth: 2,
+    borderColor: '#00bfff',
     width: 200,
     height: 40,
     borderRadius: 5,
@@ -101,5 +123,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'HelveticaNeue-Thin',
     color: '#000',
+  },
+  createButton: {
+    borderWidth: 2,
+    borderColor: '#ffffff', 
+    backgroundColor: '#00bfff',
+    paddingVertical: 10,
+    width: 300,
+    borderRadius: 5,
+  },
+  createButtonText: {
+    color: '#ffffff', 
+    fontSize: 20,
+    textAlign: 'center',
+    top: 0,
   },
 });

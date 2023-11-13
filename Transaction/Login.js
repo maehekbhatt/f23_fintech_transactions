@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, Image } from 'react-native';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  signInWithEmailAndPassword(auth, email, password).then(userCredential)
 
   const handleButtonPress = () => {
     if (email.trim() === '' || password.trim() === '') {
@@ -25,7 +28,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>UT Safe Trade</Text>
+      <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
       <Text style={styles.description}>Log In</Text>
       <TextInput
         style={styles.input}
@@ -49,8 +52,8 @@ export default function LoginScreen({ navigation }) {
         onChangeText={(text) => setPassword(text)}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.button]} onPress={handleButtonPress}>
-          <Text style={styles.buttonText}>Log In</Text>
+        <TouchableOpacity style={[styles.logInButton]} onPress={handleButtonPress}>
+          <Text style={styles.logInButtonText}>Log In</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -60,7 +63,7 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -77,7 +80,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
+    borderColor: '#00bfff',
+    borderWidth: 2,
     width: 200,
     height: 40,
     borderRadius: 5,
@@ -101,5 +106,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'HelveticaNeue-Thin',
     color: '#000',
+  },
+  icon: {
+    width: 400, 
+    height: 200,
+  },
+  logInButton: {
+    borderWidth: 2,
+    borderColor: '#ffffff', 
+    backgroundColor: '#00bfff',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  logInButtonText: {
+    color: '#ffffff', 
+    fontSize: 20,
+    textAlign: 'center',
+    top: 0,
   },
 });
