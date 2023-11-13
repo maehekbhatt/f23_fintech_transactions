@@ -6,7 +6,7 @@ export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  signInWithEmailAndPassword(auth, email, password).then(userCredential)
+  //signInWithEmailAndPassword(auth, email, password).then(userCredential)
 
   const handleButtonPress = () => {
     if (email.trim() === '' || password.trim() === '') {

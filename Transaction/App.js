@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
-import {db, auth} from "./Firebase"
+// import {db, auth} from "./Firebase"
 
 
 import LoginScreen from './Login';
