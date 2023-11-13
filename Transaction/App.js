@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import LinearGradient from 'react-native-linear-gradient';
+import {db, auth} from "./Firebase"
+
 
 import LoginScreen from './Login';
 import HomeScreen from './Home';
@@ -55,11 +58,11 @@ const UTSafeTrade = ({ navigation }) => {
       <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
       <Text style={styles.description}>Build 0.0</Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.logInButton, {bottom: 25 , left: 153}]} onPress={navigateLogin}>
-          <Text style={styles.logInButtonText}>Log In</Text>
-        </TouchableOpacity>
-              <TouchableOpacity style={[styles.signUpButton, {top:60, right: 145}]} onPress={navigateSignUp}>
-          <Text style={styles.signUpButtonText}>Sign Up</Text>
+          <TouchableOpacity style={[styles.logInButton, {bottom: 25 , left: 153}]} onPress={navigateLogin}>
+            <Text style={styles.logInButtonText}>Log In</Text>
+          </TouchableOpacity>
+              <TouchableOpacity style={[styles.signUpButton, {top:45, right: 145}]} onPress={navigateSignUp}>
+          <Text style={styles.signUpButtonText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     </View>
