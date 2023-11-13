@@ -10,7 +10,7 @@ export default function SignUpScreen({ navigation }) {
 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed up 
+    // Signed up a
     const user = userCredential.user;
     console.log("I AM HERE")
     navigation.navigate('Home')
@@ -32,9 +32,9 @@ export default function SignUpScreen({ navigation }) {
       Alert.alert('Invalid Email', 'Please use a .edu email address.');
     } else {
       // Navigate to the new page when the input is valid
-      createUserWithEmailAndPassword(auth, email, password);
-      console.log("HEREHEREHEREHRER")
-      //navigation.navigate('Home');
+      //createUserWithEmailAndPassword(auth, email, password);
+      //console.log("HEREHEREHEREHRER")
+      navigation.navigate('Home');
     }
   };
 
