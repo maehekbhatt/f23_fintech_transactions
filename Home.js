@@ -20,7 +20,7 @@ const HomeScreen = () => {
         <View style={styles.imageContainer}>
         <TouchableOpacity onPress={() => console.log('Image 1 clicked')}>
             <Image
-              source={require('./assets/pics/pc.jpeg')}
+              source={require('./assets/main/clothes.png')}
               style={[styles.image, { marginRight: 50 }]}
             />
             <Text style={[styles.buttonText, { marginLeft: 47}]}>Button 2</Text>
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 150,
-    borderRadius: 10,
     marginBottom: 10,
   },
 });
