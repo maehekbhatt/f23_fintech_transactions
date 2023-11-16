@@ -38,19 +38,23 @@ export default function SignUpScreen({ navigation }) {
     return emailRegex.test(email);
   };
 
+  const navigateLogin = () => {
+    navigation.navigate("Login");
+  };
+
   return (
     <View style={styles.container}>
-      <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
-      <Text style={styles.description}>Sign Up</Text>
+      <Image style={[styles.icon, { marginTop: -140, marginLeft: -300, marginBottom: 100}]} source={require('./assets/login/topleftlogo.png')} />
+      <Text style={styles.title}>Create Account</Text>
+      <Text style={styles.description}>Create an account with your UTMail to use SafeTrade</Text>
       <TextInput
         style={styles.input}
-        placeholder="Sign up with your .edu email"
+        placeholder="example@utexas.edu"
         fontFamily="HelveticaNeue-Thin"
         keyboardType="email-address"
         autoCapitalize="none"
         textContentType="emailAddress"
         spellCheck={false}
-        width={300}
         value={email}
         onChangeText={(text) => setEmail(text)}
       />
@@ -59,13 +63,24 @@ export default function SignUpScreen({ navigation }) {
         placeholder="Password"
         fontFamily="HelveticaNeue-Thin"
         secureTextEntry={true}
-        width={300}
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.createButton]} onPress={handleButtonPress}>
-          <Text style={styles.createButtonText}>Create Account</Text>
+        <TouchableOpacity style={[styles.logInButton]} onPress={handleButtonPress}>
+        <Image
+              style={styles.button}
+              source={require("./assets/login/signup.png")}
+            />
+        </TouchableOpacity>
+      </View>
+      <Image style={[styles.line]} source={require('./assets/login/orline.png')} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={[styles.logInButton]} onPress={navigateLogin}>
+        <Image
+              style={styles.button}
+              source={require("./assets/login/gotologin.png")}
+            />
         </TouchableOpacity>
       </View>
     </View>
@@ -80,28 +95,33 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 40,
-    fontFamily: 'HelveticaNeue-Thin',
+    fontSize: 35,
+    fontFamily: 'HelveticaNeue',
+    marginLeft: -80,
     color: '#000000',
     marginBottom: 20,
   },
   description: {
     fontSize: 14,
-    fontFamily: 'HelveticaNeue-Thin',
     color: '#000000',
-    marginBottom: 15,
+    fontFamily: 'HelveticaNeue-Thin',
+    marginBottom: 20,
+    marginRight: 11,
   },
   input: {
     backgroundColor: '#ffffff',
+    borderColor: '#CDCDCD',
     borderWidth: 2,
-    borderColor: '#00bfff',
-    width: 200,
+    width: 325,
     height: 40,
-    borderRadius: 5,
-    marginTop: 20,
-    marginBottom: 20,
+    borderRadius: 15,
+    marginTop: 10,
+    marginBottom: 10,
     padding: 10,
-    borderWidth: .5,
+    borderWidth: 1,
+  },
+  icon: {
+    transform: [{scale: 0.5}]
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -119,18 +139,19 @@ const styles = StyleSheet.create({
     fontFamily: 'HelveticaNeue-Thin',
     color: '#000',
   },
-  createButton: {
-    borderWidth: 2,
-    borderColor: '#ffffff', 
-    backgroundColor: '#00bfff',
-    paddingVertical: 10,
-    width: 300,
-    borderRadius: 5,
+  logInButton: {
+    marginTop: -10,
+    marginBottom: -10,
+    transform: [{scale: 0.5}],
   },
-  createButtonText: {
+  logInButtonText: {
     color: '#ffffff', 
     fontSize: 20,
     textAlign: 'center',
     top: 0,
+  },
+  line: {
+    transform: [{ scale: 0.5 }],
+    marginBottom: -15,
   },
 });

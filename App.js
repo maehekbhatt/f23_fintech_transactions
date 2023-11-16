@@ -61,23 +61,29 @@ const UTSafeTrade = ({ navigation }) => {
       style={styles.backgroundImage}
     >
       <View style={styles.container}>
-        <Image style={[styles.icon, { marginTop: -100, marginBottom: 50 }]} source={require("./assets/logo/logo.png")} />
-        <Text style={[styles.title, { marginBottom: 50 }]}>SafeTrade</Text>
+        <Image
+          style={[styles.icon, { marginTop: -100, marginBottom: -20 }]}
+          source={require("./assets/logo/logo.png")}
+        />
+        <Text style={[styles.title, { marginBottom: 40 }]}>SafeTrade</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={[styles.logInButton, { top: 20, left: 168 }]}
+            style={[styles.button, { top: -20, left: 335 }]}
             onPress={navigateLogin}
           >
             <Image
-              style={styles.icon}
+              style={styles.button}
               source={require("./assets/home/signin.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.signUpButton, { top: 80, right: 170, marginBottom: 100}]}
+            style={[styles.button, { top: 60, right: 333, marginBottom: 100 }]}
             onPress={navigateSignUp}
           >
-            <Image style={styles.icon} source={require("./home/signup.png")} />
+            <Image
+              style={styles.button}
+              source={require("./assets/home/createaccount.png")}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -96,9 +102,12 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover", // or 'stretch' for different cover behaviors
   },
+  icon: {
+    transform: [{ scale: 0.5 }],
+  },
   title: {
     fontSize: 55,
-    fontFamily: 'HelveticaNeue',
+    fontFamily: "HelveticaNeue",
     color: "#fff",
     marginBottom: 20,
   },
@@ -107,14 +116,11 @@ const styles = StyleSheet.create({
     color: "#ecf0f1",
     marginBottom: 15,
   },
-  button: {
-    backgroundColor: "#355c7d",
-    paddingVertical: 10,
-    width: 300,
-    marginTop: 20,
-  },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  button: {
+    transform: [{ scale: 0.7 }],
   },
 });

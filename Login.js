@@ -31,6 +31,10 @@ export default function LoginScreen({ navigation }) {
     }
   };
 
+  const navigateSignUp = () => {
+    navigation.navigate("Signup");
+  };
+
   const validateEmail = (email) => {
     const emailRegex = /.edu$/i; // Check if the email ends with ".edu"
     return emailRegex.test(email);
@@ -38,17 +42,17 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
-      <Text style={styles.description}>Log In</Text>
+      <Image style={[styles.icon, { marginTop: -140, marginLeft: -300, marginBottom: 100}]} source={require('./assets/login/topleftlogo.png')} />
+      <Text style={styles.title}>Sign In</Text>
+      <Text style={styles.description}>Sign in with UTMail to use SafeTrade</Text>
       <TextInput
         style={styles.input}
-        placeholder="Log in with your .edu email"
+        placeholder="example@utexas.edu"
         fontFamily="HelveticaNeue-Thin"
         keyboardType="email-address"
         autoCapitalize="none"
         textContentType="emailAddress"
         spellCheck={false}
-        width={300}
         value={email}
         onChangeText={(text) => setEmail(text)}
       />
@@ -57,13 +61,24 @@ export default function LoginScreen({ navigation }) {
         placeholder="Password"
         fontFamily="HelveticaNeue-Thin"
         secureTextEntry={true}
-        width={300}
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={[styles.logInButton]} onPress={handleButtonPress}>
-          <Text style={styles.logInButtonText}>Log In</Text>
+        <Image
+              style={styles.button}
+              source={require("./assets/login/signin.png")}
+            />
+        </TouchableOpacity>
+      </View>
+      <Image style={[styles.line]} source={require('./assets/login/orline.png')} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={[styles.logInButton]} onPress={navigateSignUp}>
+        <Image
+              style={styles.button}
+              source={require("./assets/login/createaccount.png")}
+            />
         </TouchableOpacity>
       </View>
     </View>
@@ -78,8 +93,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 40,
-    fontFamily: 'HelveticaNeue-Thin',
+    fontSize: 35,
+    fontFamily: 'HelveticaNeue',
+    marginRight: 215,
     color: '#000000',
     marginBottom: 20,
   },
@@ -87,19 +103,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#000000',
     fontFamily: 'HelveticaNeue-Thin',
-    marginBottom: 15,
+    marginBottom: 20,
+    marginRight: 107,
   },
   input: {
     backgroundColor: '#ffffff',
-    borderColor: '#00bfff',
+    borderColor: '#CDCDCD',
     borderWidth: 2,
-    width: 200,
+    width: 325,
     height: 40,
-    borderRadius: 5,
-    marginTop: 20,
-    marginBottom: 20,
+    borderRadius: 15,
+    marginTop: 10,
+    marginBottom: 10,
     padding: 10,
-    borderWidth: .5,
+    borderWidth: 1,
+  },
+  icon: {
+    transform: [{scale: 0.5}]
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -117,22 +137,19 @@ const styles = StyleSheet.create({
     fontFamily: 'HelveticaNeue-Thin',
     color: '#000',
   },
-  icon: {
-    width: 400, 
-    height: 200,
-  },
   logInButton: {
-    borderWidth: 2,
-    borderColor: '#ffffff', 
-    backgroundColor: '#00bfff',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    marginTop: -10,
+    marginBottom: -10,
+    transform: [{scale: 0.5}],
   },
   logInButtonText: {
     color: '#ffffff', 
     fontSize: 20,
     textAlign: 'center',
     top: 0,
+  },
+  line: {
+    transform: [{ scale: 0.5 }],
+    marginBottom: -15,
   },
 });
