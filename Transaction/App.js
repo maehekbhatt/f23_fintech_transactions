@@ -1,15 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LinearGradient from 'react-native-linear-gradient';
-// import {db, auth} from "./Firebase"
-
-
 import LoginScreen from './Login';
 import HomeScreen from './Home';
 import SignupScreen from './Signup';
-import ImageAssets from './assets/ImageAssets'
+import Svg from 'react-native-svg';
 
 // Create a stack navigator
 const Stack = createStackNavigator();
@@ -55,6 +51,11 @@ const UTSafeTrade = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <ImageBackground
+        source={require('./assets/background.svg')} // Replace with the path to your image
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      ></ImageBackground>
       <Image style={styles.icon} source={require('./assets/safe-trade-icon.png')} />
       <Text style={styles.description}>Build 0.0</Text>
       <View style={styles.buttonContainer}>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, Image } from 'react-native';
-import {db, auth} from "./Firebase"
+import { auth } from "./Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
@@ -8,20 +8,6 @@ export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up a
-    const user = userCredential.user;
-    console.log("I AM HERE")
-    navigation.navigate('Home')
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-  
 
   const handleButtonPress = () => {
     if (email.trim() === '' || password.trim() === '') {
@@ -32,9 +18,18 @@ export default function SignUpScreen({ navigation }) {
       Alert.alert('Invalid Email', 'Please use a .edu email address.');
     } else {
       // Navigate to the new page when the input is valid
-      //createUserWithEmailAndPassword(auth, email, password);
-      //console.log("HEREHEREHEREHRER")
-      navigation.navigate('Home');
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up a
+        const user = userCredential.user;
+        navigation.navigate('Home')
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
     }
   };
 

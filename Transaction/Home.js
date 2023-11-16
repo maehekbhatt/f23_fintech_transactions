@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
 
 const HomeScreen = () => {
   return (
@@ -18,14 +18,21 @@ const HomeScreen = () => {
       <View style={styles.mainContent}>
         {/* Add your app's main content here */}
         <View style={styles.imageContainer}>
-          <Image
-            source={require('./assets/pic1.jpeg')}
-            style={styles.image}
-          />
-          <Image
-            source={require('./assets/pic1.jpeg')}
-            style={styles.image}
-          />
+        <TouchableOpacity onPress={() => console.log('Image 1 clicked')}>
+            <Image
+              source={require('./assets/pics/pc.jpeg')}
+              style={[styles.image, { marginRight: 50 }]}
+            />
+            <Text style={[styles.buttonText, { marginLeft: 47}]}>Button 2</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => console.log('Image 2 clicked')}>
+            <Image
+              source={require('./assets/pics/ps5.jpeg')}
+              style={styles.image}
+            />
+            <Text style={[styles.buttonText, { marginLeft: 47}]}>Button 2</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>

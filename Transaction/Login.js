@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, Image } from 'react-native';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword} from 'firebase/auth';
+import { auth } from "./Firebase"
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  //signInWithEmailAndPassword(auth, email, password).then(userCredential)
 
   const handleButtonPress = () => {
     if (email.trim() === '' || password.trim() === '') {
@@ -17,7 +17,17 @@ export default function LoginScreen({ navigation }) {
       Alert.alert('Invalid Email', 'Please use a .edu email address.');
     } else {
       // Navigate to the new page when the input is valid
-      navigation.navigate('Home');
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          // ...
+          navigation.navigate('Home');
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
     }
   };
 
