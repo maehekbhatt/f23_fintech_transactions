@@ -12,6 +12,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./Login";
 import HomeScreen from "./Home";
 import SignupScreen from "./Signup";
+import MapScreen from "./Map";
 
 // Create a stack navigator
 const Stack = createStackNavigator();
@@ -39,6 +40,11 @@ export default function App() {
           name="Home"
           component={HomeScreen}
           options={{ title: "Home", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Map"
+          component={MapScreen}
+          options={{ title: "Map", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

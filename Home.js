@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
 
-const HomeScreen = () => {
+export default function HomeScreen({navigation}) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.searchContainer}>
@@ -34,6 +34,9 @@ const HomeScreen = () => {
             <Text style={[styles.buttonText, { marginLeft: 47}]}>Button 2</Text>
           </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+            <Text style={[styles.buttonText, { marginLeft: 47}]}>Map</Text>
+          </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -84,4 +87,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
