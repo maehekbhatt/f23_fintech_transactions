@@ -12,7 +12,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./Login";
 import HomeScreen from "./Home";
 import SignupScreen from "./Signup";
-import MapScreen from "./Map";
+import ProductListing from "./ProductListing";
+import ItemPage from "./ItemPage";
+import MapScreen from './Map';
 
 // Create a stack navigator
 const Stack = createStackNavigator();
@@ -42,6 +44,16 @@ export default function App() {
           options={{ title: "Home", headerShown: false }}
         />
         <Stack.Screen
+          name="ProductListing"
+          component={ProductListing}
+          options={{ title: "Product Listing", headerShown: false }}
+        />
+         <Stack.Screen
+          name="ItemPage"
+          component={ItemPage}
+          options={{ title: "Item Page", headerShown: false }}
+          />
+          <Stack.Screen
           name="Map"
           component={MapScreen}
           options={{ title: "Map", headerShown: false }}

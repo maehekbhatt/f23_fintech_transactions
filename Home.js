@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.searchContainer}>
@@ -18,7 +18,13 @@ export default function HomeScreen({navigation}) {
       <View style={styles.mainContent}>
         {/* Add your app's main content here */}
         <View style={styles.imageContainer}>
-        <TouchableOpacity onPress={() => console.log('Image 1 clicked')}>
+        <TouchableOpacity onPress={
+          () => 
+          {
+          console.log('Image 1 clicked');
+          navigation.navigate('ProductListing');
+          }
+        }>
             <Image
               source={require('./assets/main/clothes.png')}
               style={[styles.image, { marginRight: 50 }]}
@@ -33,6 +39,7 @@ export default function HomeScreen({navigation}) {
             />
             <Text style={[styles.buttonText, { marginLeft: 47}]}>Button 2</Text>
           </TouchableOpacity>
+
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Map')}>
             <Text style={[styles.buttonText, { marginLeft: 47}]}>Map</Text>
@@ -86,4 +93,3 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
-
