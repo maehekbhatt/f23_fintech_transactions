@@ -19,12 +19,12 @@ export default function ItemPage({ navigation }) {
         </TouchableOpacity>
         
       <Image
-            source={require('./assets/itemPagePic.png')}
+            source={require('./assets/clothing/reeboks.webp')}
             style={styles.productImage}
           />
-        <Text style={styles.productName}>Product Name</Text>
-        <Text style={styles.productPrice}>$----</Text>
-        <Text style={styles.productLabel}>Condition/Brand</Text>
+        <Text style={styles.productName}>Reebok Men's Shoes</Text>
+        <Text style={styles.productPrice}>$90.00</Text>
+        <Text style={styles.productLabel}>New / Men's 9.5</Text>
         <Text style={styles.productDescription}>Lorem ipsum dolor sit amet consectetur. Nibh morbi arcu egestas volutpat in nunc faucibus lorem. Leo id risus enim sem fames ac enim scelerisque tristique. Sem nunc semper maecenas eu. At quam elit eget nec elementum aliquet viverra.</Text>
         <Text style={styles.productOwnerInfo}>Posted by John Doe, jd12345</Text>
         <TouchableOpacity style={styles.chatButton}>

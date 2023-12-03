@@ -55,7 +55,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/reeboks.webp')}
             style={styles.productImage}
           />
           <Image
@@ -63,9 +63,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Reebok Men's Shoes</Text>
+            <Text style={styles.productPrice}>$90.00</Text>
+            <Text style={styles.productDescription}>New / Men's 9.5</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -82,7 +82,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/aritzia.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -90,9 +90,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Aritzia Women's Jacket</Text>
+            <Text style={styles.productPrice}>$120.00</Text>
+            <Text style={styles.productDescription}>Like New / XS</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -109,7 +109,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/jersey.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -117,9 +117,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Texas Longhorns Men's Football Jersey</Text>
+            <Text style={styles.productPrice}>$35.00</Text>
+            <Text style={styles.productDescription}>New / XL</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -136,7 +136,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/asics.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -144,9 +144,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>ASICS Women's Purple and Grey Trainers</Text>
+            <Text style={styles.productPrice}>$99.00</Text>
+            <Text style={styles.productDescription}>Like New / Women's 10</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -163,7 +163,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/af1.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -171,9 +171,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Nike Men's Air Force One</Text>
+            <Text style={styles.productPrice}>$65.00</Text>
+            <Text style={styles.productDescription}>Used / Men's 10</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -190,7 +190,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/brandy.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -198,9 +198,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Brandy Melville Women's Top</Text>
+            <Text style={styles.productPrice}>$15.00</Text>
+            <Text style={styles.productDescription}>Like New / S</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
@@ -217,7 +217,7 @@ export default function ProductListing({ navigation }) {
           }}>
         <View style={styles.productItem}>
           <Image
-            source={require('./assets/BackgroundPic.png')}
+            source={require('./assets/clothing/hoodie.jpeg')}
             style={styles.productImage}
           />
           <Image
@@ -225,9 +225,9 @@ export default function ProductListing({ navigation }) {
           style={styles.productLike}
           />
           <View style={styles.productDetails}>
-            <Text style={styles.productName}>Product Name</Text>
-            <Text style={styles.productPrice}>$----</Text>
-            <Text style={styles.productDescription}>Condition/Brand</Text>
+            <Text style={styles.productName}>Cotton On Women's Gray Hoodie</Text>
+            <Text style={styles.productPrice}>$25.00</Text>
+            <Text style={styles.productDescription}>Used / XL</Text>
           </View>
           <Image
           source={require('./assets/menuDots.png')}
